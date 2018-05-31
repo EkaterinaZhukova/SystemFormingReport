@@ -13,6 +13,7 @@ class AddNewOrderViewController: UIViewController, UITableViewDataSource {
     var arrGoods = [Goods]()
     var index:Int? = nil
 
+    @IBOutlet weak var goodTF: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         createDataPicker()
@@ -33,6 +34,9 @@ class AddNewOrderViewController: UIViewController, UITableViewDataSource {
         }
         else{
             index = tableView.indexPathForSelectedRow?.row
+            if(index != nil){
+                goodTF.text=arrGoods[index!].name!
+            }
             tableView.isHidden=true
             }
         }

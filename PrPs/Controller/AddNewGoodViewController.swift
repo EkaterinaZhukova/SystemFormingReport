@@ -52,7 +52,7 @@ class AddNewGoodViewController: UIViewController, UITableViewDataSource {
             tableView.isHidden=false
         }
             else{
-                index=tableView.indexPathForSelectedRow!.row
+                index=tableView.indexPathForSelectedRow?.row
                 tableView.isHidden=true
             }
         }
