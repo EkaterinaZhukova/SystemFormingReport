@@ -39,7 +39,7 @@ class ViewController: UIViewController {
     @IBAction func enterButton(_ sender: Any) {
         var login=loginTF?.text
         var password=passwordTF?.text
-
+        var isUser=false
         for dt in data{
             if(dt.login==login && dt.password==password){
                 if(dt.isAdmin==0){
@@ -48,11 +48,17 @@ class ViewController: UIViewController {
                 else{
                     UserDefaults.standard.set(true, forKey: "isAdmin")
                 }
+                isUser=true
                 performSegue(withIdentifier: "goToMainMenu", sender: nil)
             }
-            else{
-
-            }
+    }
+        if(isUser == false){
+            let alertController = UIAlertController(title: "Ошибка!", message:
+                "Вы не являетесь пользователем данной системы. Обратитесь к администратору или проверьте введенные данные", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "ОК", style: UIAlertActionStyle.default,handler: nil))
+            self.present(alertController, animated: true, completion: nil)
+            loginTF.text=""
+            passwordTF.text=""
         }
     }
     override func didReceiveMemoryWarning() {

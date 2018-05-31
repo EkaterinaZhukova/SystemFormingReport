@@ -29,6 +29,21 @@
       language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D0D848F620C0118100840147"
+               BuildableName = "PrPsUITests.xctest"
+               BlueprintName = "PrPsUITests"
+               ReferencedContainer = "container:PrPs.xcodeproj">
+            </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "PrPsUITests/testNotAdmin()">
+               </Test>
+            </SkippedTests>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
