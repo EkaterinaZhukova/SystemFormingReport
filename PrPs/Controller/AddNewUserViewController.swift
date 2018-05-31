@@ -37,6 +37,8 @@ class AddNewUserViewController: UIViewController {
                 "Новый пользователь был добавлен в БД", preferredStyle: UIAlertControllerStyle.alert)
             alertController.addAction(UIAlertAction(title: "ОК", style: UIAlertActionStyle.default,handler: nil))
             self.present(alertController, animated: true, completion: nil)
+            loginTF.text=""
+            passwordTF.text=""
 
         } catch {
             print("Failed saving")

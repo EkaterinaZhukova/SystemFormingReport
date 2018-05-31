@@ -12,7 +12,7 @@ import CoreData
 class AddNewGoodViewController: UIViewController, UITableViewDataSource {
 
     var arrProducers=[Producers]()
-    var index = (-1)
+    var index:Int? = nil
     @IBOutlet weak var goodNameTF: UITextField!
 
     @IBOutlet weak var goodCostTF: UITextField!
@@ -24,6 +24,7 @@ class AddNewGoodViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrProducers.count
     }
+    
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell=tableView.dequeueReusableCell(withIdentifier: "producer")! as UITableViewCell
@@ -73,6 +74,9 @@ class AddNewGoodViewController: UIViewController, UITableViewDataSource {
                 "Новый товар был добавлен в БД", preferredStyle: UIAlertControllerStyle.alert)
             alertController.addAction(UIAlertAction(title: "ОК", style: UIAlertActionStyle.default,handler: nil))
             self.present(alertController, animated: true, completion: nil)
+            goodCostTF.text=""
+            goodNameTF.text=""
+            
 
         } catch {
             print("Failed saving")
@@ -88,14 +92,14 @@ class AddNewGoodViewController: UIViewController, UITableViewDataSource {
             alertController.addAction(UIAlertAction(title: "ОК", style: UIAlertActionStyle.default,handler: nil))
             self.present(alertController, animated: true, completion: nil)
         }
-        else if(index == (-1)){
+        else if(index == nil){
             let alertController = UIAlertController(title: "Ошибка!", message:
                 "Выберите производителя", preferredStyle: UIAlertControllerStyle.alert)
             alertController.addAction(UIAlertAction(title: "ОК", style: UIAlertActionStyle.default,handler: nil))
             self.present(alertController, animated: true, completion: nil)
         }
         else{
-            addGoodToDB(name: name!, cost: cost!, index: index)
+            addGoodToDB(name: name!, cost: cost!, index: index!)
         }
     }
 

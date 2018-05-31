@@ -14,6 +14,10 @@ class ReportClientsViewController: UIViewController, UITableViewDataSource {
     struct output{
         var client:String
         var goodName:String
+        init(clientNameStr:String, goodNameStr:String){
+            client=clientNameStr
+            goodName=goodNameStr
+        }
     }
     var arrGoods = [Goods]()
     var arrOrders = [Orders]()
@@ -23,6 +27,7 @@ class ReportClientsViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var dateTF: UITextField!
     let datePicker=UIDatePicker()
     var orderDate:Date?=nil
+    @IBOutlet weak var tableView: UITableView!
     func createDataPicker(){
         let toolbar=UIToolbar()
         toolbar.sizeToFit()
@@ -33,17 +38,23 @@ class ReportClientsViewController: UIViewController, UITableViewDataSource {
         dateTF.inputView=datePicker
     }
     @objc func donePressed(){
+        resultArr.removeAll()
+        tableView.reloadData()
         let dateFormatter=DateFormatter()
-        dateFormatter.dateStyle = .short
-        dateFormatter.timeStyle = .none
+        dateFormatter.dateFormat = "YYYY-mm-dd"
         orderDate=datePicker.date
-        dateTF.text="\(datePicker.date)"
+        dateTF.text=dateFormatter.string(from: orderDate!)
+        
+        let gregorian = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)!
+        let comps = gregorian.components([.year, .month, .day], from: orderDate!)
         for ord in arrOrders{
-            if(ord.date==orderDate){
-            var op:output? = nil
-            op?.client = ord.client!
-            op?.goodName = (ord.good?.name)!
-                resultArr.append(op!)
+            let cmp = gregorian.components([.year, .month, .day], from: ord.date!)
+            if(cmp==comps){
+                let op = output(clientNameStr: ord.client!,goodNameStr: (ord.good?.name!)!)
+                resultArr.append(op)
+                tableView.beginUpdates()
+                tableView.insertRows(at: [IndexPath(row: resultArr.count-1, section: 0)], with: .automatic)
+                tableView.endUpdates()
             }
         }
 

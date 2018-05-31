@@ -66,10 +66,11 @@ class AddNewOrderViewController: UIViewController, UITableViewDataSource {
     }
     @objc func donePressed(){
         let dateFormatter=DateFormatter()
-        dateFormatter.dateStyle = DateFormatter.Style.medium
-        dateFormatter.timeStyle = DateFormatter.Style.none
+//        dateFormatter.dateStyle = DateFormatter.Style.medium
+//        dateFormatter.timeStyle = DateFormatter.Style.none
+        dateFormatter.dateFormat = "YYYY-MM-dd"
         orderDate=datePicker.date
-        dateTF.text="\(datePicker.date)"
+        dateTF.text = dateFormatter.string(from: orderDate!)
         self.view.endEditing(true)
     }
     func addDataToDB(clientName:String){
@@ -88,7 +89,9 @@ class AddNewOrderViewController: UIViewController, UITableViewDataSource {
                 "Новый заказ был добавлен в БД", preferredStyle: UIAlertControllerStyle.alert)
             alertController.addAction(UIAlertAction(title: "ОК", style: UIAlertActionStyle.default,handler: nil))
             self.present(alertController, animated: true, completion: nil)
-
+            dateTF.text=""
+            clintNameTF.text=""
+            
         } catch {
             print("Failed saving")
         }

@@ -26,30 +26,6 @@ class ViewController: UIViewController {
         let context = appDelegate.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "Users", in: context)
 
-//        let newUser = NSManagedObject(entity: entity!, insertInto: context)
-//
-//                newUser.setValue("admin", forKey: "login")
-//                newUser.setValue("admin", forKey: "password")
-//                newUser.setValue(1, forKey: "isAdmin")
-//
-//                do {
-//                    try context.save()
-//                    print("Saved")
-//                } catch {
-//                    print("Failed saving")
-//                }
-//
-//        newUser.setValue("kat", forKey: "login")
-//        newUser.setValue("123", forKey: "password")
-//        newUser.setValue(0, forKey: "isAdmin")
-//
-//        do {
-//            try context.save()
-//            print("Saved")
-//        } catch {
-//            print("Failed saving")
-//        }
-
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Users")
         data = try! context.fetch(fetchRequest) as! [Users]
         print(data.count)
