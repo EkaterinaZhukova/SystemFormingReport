@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nQQ-ne-Tmh">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -111,14 +111,20 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="emK-Ip-ntn"/>
                     </view>
-                    <navigationItem key="navigationItem" id="1wa-gQ-aWh"/>
+                    <navigationItem key="navigationItem" id="1wa-gQ-aWh">
+                        <barButtonItem key="rightBarButtonItem" systemItem="reply" id="Fbr-hv-KGV">
+                            <connections>
+                                <segue destination="nQQ-ne-Tmh" kind="push" id="WxZ-0S-Oc2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="updateButton" destination="L0f-hz-DZO" id="vTw-hV-CLX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lBM-5e-MW1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="930" y="108"/>
+            <point key="canvasLocation" x="892" y="137"/>
         </scene>
         <!--Report Dynamic View Controller-->
         <scene sceneID="Uas-BE-vM8">
@@ -655,6 +661,65 @@
             </objects>
             <point key="canvasLocation" x="2479.1999999999998" y="108.39580209895054"/>
         </scene>
+        <!--Help Page View Controller-->
+        <scene sceneID="1Yu-dy-Cv8">
+            <objects>
+                <viewController id="nQQ-ne-Tmh" customClass="HelpPageViewController" customModule="PrPs" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BAi-el-OXt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="По всем вопросам свзяанным можете обращаться:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o8P-GK-5Cg">
+                                <rect key="frame" x="16" y="64" width="343" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gmailLabel" translatesAutoresizingMaskIntoConstraints="NO" id="iDz-DY-kSf">
+                                <rect key="frame" x="5" y="146" width="38" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="kate.zhukova.98@gmail.com" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pUD-2c-lYT">
+                                <rect key="frame" x="67" y="146" width="297" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" selected="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mvq-Gv-YDg">
+                                <rect key="frame" x="10" y="439" width="349" height="208"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="janeketko@gmail.com" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WxX-u6-YRq">
+                                <rect key="frame" x="70" y="189" width="297" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gmailLabel" translatesAutoresizingMaskIntoConstraints="NO" id="ZHY-uH-hYA">
+                                <rect key="frame" x="5" y="190" width="38" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="6nl-vQ-KEJ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="7VL-bl-N06"/>
+                    <connections>
+                        <outlet property="janeMaillink" destination="WxX-u6-YRq" id="BTh-Ro-iQ6"/>
+                        <outlet property="kateMailLink" destination="pUD-2c-lYT" id="PuI-PK-wLi"/>
+                        <outlet property="mapView" destination="mvq-Gv-YDg" id="iz6-VD-e9I"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pu3-jB-ppp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="668" y="-520.38980509745136"/>
+        </scene>
         <!--Add New Order View Controller-->
         <scene sceneID="BfG-ZK-FTY">
             <objects>
@@ -867,5 +932,6 @@
     </scenes>
     <resources>
         <image name="Image" width="375" height="667"/>
+        <image name="gmailLabel" width="32" height="32"/>
     </resources>
 </document>

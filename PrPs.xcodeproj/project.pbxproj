@@ -22,6 +22,7 @@
 		D0B80F5120BEB4B60054CC6A /* ReportOnClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B80F5020BEB4B60054CC6A /* ReportOnClientViewController.swift */; };
 		D0B80F5320BECEE30054CC6A /* ReportDynamicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B80F5220BECEE30054CC6A /* ReportDynamicViewController.swift */; };
 		D0D848FA20C0118100840147 /* PrPsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D848F920C0118100840147 /* PrPsUITests.swift */; };
+		D0D8490220C0282B00840147 /* HelpPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D8490120C0282B00840147 /* HelpPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		D0D848F720C0118100840147 /* PrPsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrPsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0D848F920C0118100840147 /* PrPsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrPsUITests.swift; sourceTree = "<group>"; };
 		D0D848FB20C0118100840147 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0D8490120C0282B00840147 /* HelpPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				D0B80F5020BEB4B60054CC6A /* ReportOnClientViewController.swift */,
 				D0B80F5220BECEE30054CC6A /* ReportDynamicViewController.swift */,
 				C496789620BDC5E500E632E9 /* AddNewOrderViewController.swift */,
+				D0D8490120C0282B00840147 /* HelpPageViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0D8490220C0282B00840147 /* HelpPageViewController.swift in Sources */,
 				D0B80F5120BEB4B60054CC6A /* ReportOnClientViewController.swift in Sources */,
 				C4F3044720B95F8C007E4182 /* MainMenuViewController.swift in Sources */,
 				C41B907020B952A2000D0A53 /* PrPs.xcdatamodeld in Sources */,
